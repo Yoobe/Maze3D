@@ -10,7 +10,6 @@ small = [[0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0
 def get_pixel(x, y):
     return int(eval("get_pixel(" + str(x) + "," + str(y) + ")"))
 
-
 def textout48(x, y, text, color, size):
     if size == 's': # Small font
         # Capitalize text
@@ -30,11 +29,5 @@ def textout48(x, y, text, color, size):
                     if platform == 'win':
                         print(text[i], cx, cx+ind*3, val, ind, small[cy][cx+ind*3])
                     if small[cy][cx+ind*3] == 1:
-                        # if platform == 'win':
-                        #     print(text[i], cx, cx+ind*3, val, ind, small[cy][cx+ind*3])
-                        # else :
                         if platform != 'win':
                             pixon(0, x + i * 4 + cx, y + cy, color)
-
-if platform == 'win':
-    textout48(5, 5, "This is my test with a small font : <>?{}!@#$%^&*()-_=", 0x121212, 's')

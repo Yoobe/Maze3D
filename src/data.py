@@ -5,9 +5,7 @@ from hp48fonts import *
 # Maze data
 
 # Maze definition (NESW) 
-# MazeBox = [0b0000, 0b0100, 0b0010, 0b0001, 0b1000, 0b0101, 0b1010, 0b0111, 0b1011, 0b1101, 0b1110, 0b0011, 0b1001, 0b1100, 0b0110, 0b1111, 999]
 MazeBox = [0b0000, 0b0001, 0b0010, 0b0011, 0b0100, 0b0101, 0b0110, 0b0111, 0b1000, 0b1001, 0b1010, 0b1011, 0b1100, 0b1101, 0b1110, 0b1111]
-# Maze = [[1,5,11,14,5,11,14,5,5,5,5,5,11,1,5,7,11,2,14,11],[14,3,6,13,11,6,13,5,5,5,11,2,6,14,3,6,6,6,6,6],[6,1,9,5,8,13,5,5,5,3,6,6,6,6,14,12,13,9,12,6],[6,14,11,2,6,14,5,7,5,5,12,6,6,6,10,5,3,1,5,8],[6,6,13,8,6,10,11,13,5,3,14,15,12,10,9,5,5,11,14,8],[10,12,14,8,6,4,6,14,5,11,4,6,14,9,5,5,11,6,6,4],[10,5,12,6,13,5,12,10,3,13,5,12,4,14,7,11,4,6,10,11],[4,1,5,9,5,5,5,9,5,5,5,5,5,12,4,13,5,12,4,16]]
 Maze = generate_maze()
 Img = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img6.png", "img7.png", "img8.png", "img9.png"]
 ImgType = [0b010, 0b000, 0b100, 0b001, 0b101, 0b111, 0b011, 0b110] 
@@ -45,13 +43,8 @@ pScore = 0
 # Reset Screen Function
 def resetScreen():
     fillrect(0, 0, 0, 320, 240, white, white)
-    # eval("G0:=AFiles(\"bg.png\")")
-    # fillrect(0, 0, 121, 241, 176-121, bg, bg)
-    # fillrect(0, 0, 194, 320, 240, white, white)
-    # eval("G0:=AFiles(\"" + Img[0] + "\")")
 
 def drawEmptyMaze():
-    # 7 , 156 -> 216, 235
     for x in range (21):
         line(0, 7 + x * 10, 156, 7 + x * 10, 236, black)
     for y in range (9):
@@ -66,12 +59,10 @@ def LoadScreens():
     eval("G6:=AFiles(\"" + Img[5] + "\")")
     eval("G7:=AFiles(\"" + Img[6] + "\")")
     eval("G8:=AFiles(\"" + Img[7] + "\")")
-    eval("G9:=AFiles(\"" + Img[8] + "\")") # 219-86 -> 318-190
+    eval("G9:=AFiles(\"" + Img[8] + "\")")
 
 def Dashboard(): 
     strblit2(0, 219, 0, 100, 78, 9, 219, 0, 100, 78)
-    
-    # strblit2(0, 219, 86, 99, 104, 9, 219, 86, 99, 104)
 
 def ShowScreen(index):
     strblit2(0, 7, 2, 209, 149, index, 7, 2, 209, 149)
